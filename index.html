@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./features.css" />
     <link rel="stylesheet" href="./portfolio.css" />
     <link rel="stylesheet" href="./command-center.css" />
+    <link rel="stylesheet" href="./chatbot.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -75,9 +76,9 @@
         <section id="logistics" class="view"><div class="view-intro"><div><p class="kicker">SUPPLY CHAIN CONTROL</p><h2>Materials, vendors, and issue register</h2><p class="muted">Keep critical deliveries and site blockers visible before they impact the schedule.</p></div><button id="new-vendor" class="primary-button"><i data-lucide="plus"></i> Add vendor delivery</button></div><div id="logistics-metrics" class="insight-metrics"></div><div class="logistics-grid"><section class="panel"><div class="panel-heading"><div><p class="kicker">VENDOR DELIVERY BOARD</p><h3>Incoming materials</h3></div><span class="count-pill">TRACKING</span></div><div id="vendor-list" class="vendor-list"></div></section><section class="panel"><div class="panel-heading"><div><p class="kicker danger">ISSUE REGISTER</p><h3>Open site blockers</h3></div><span id="issue-count" class="count-pill">0 open</span></div><div id="issue-list" class="issue-list"></div></section></div></section>
       </main>
       <aside class="ai-rail">
-        <div class="rail-header"><div><p class="kicker">ASK SITEPULSE</p><h3>Project assistant</h3></div><button id="collapse-chat" class="small-icon"><i data-lucide="chevron-right"></i></button></div>
+        <div class="rail-header"><div><p class="kicker">ASK SITEPULSE</p><h3>Project assistant</h3></div><div class="chat-controls"><button id="clear-chat" class="small-icon" title="Clear conversation"><i data-lucide="trash-2"></i></button><button id="collapse-chat" class="small-icon"><i data-lucide="chevron-right"></i></button></div></div>
         <div class="chat-context"><i data-lucide="building-2"></i><select id="chat-project-select"></select></div>
-        <div id="chat-messages" class="chat-messages"><div class="message assistant"><span class="chat-avatar">✦</span><p>I’ve reviewed the latest updates for this project. What would you like to know?</p></div></div>
+        <div class="chat-scope"><span class="pulse-dot"></span><span id="chat-context-count">0 updates in context</span></div><div id="chat-messages" class="chat-messages"></div>
         <div class="question-suggestions"><button>What is delaying this project?</button><button>Which materials are urgent?</button><button>What should we prioritize tomorrow?</button></div>
         <form id="chat-form" class="chat-input"><input id="chat-input" placeholder="Ask about the site…" /><button aria-label="Send message"><i data-lucide="arrow-up"></i></button></form>
       </aside>
@@ -88,5 +89,6 @@
     <script src="./features.js"></script>
     <script src="./portfolio.js"></script>
     <script src="./command-center.js"></script>
+    <script src="./chatbot.js"></script>
   </body>
 </html>

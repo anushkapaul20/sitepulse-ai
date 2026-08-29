@@ -55,6 +55,7 @@ Open [http://localhost:4173](http://localhost:4173). Stop the server with `Ctrl 
 | Overview | Portfolio KPI cards, active risks, recent site intelligence, project health |
 | Daily update | Plain-language updates, photos, material and blocker capture, report generation |
 | Reports | Searchable report archive, action checklist, printable/PDF-ready reports |
+| Project chatbot | Persistent project-scoped chat using saved updates, plans, vendors, materials, and risks |
 | Project planner | Milestones, owned tasks, priorities, safety checklist, AI weekly digest |
 | Insights | Completion trend, risk distribution, project signals, delivery KPIs |
 | Materials & vendors | Delivery status board, supplier tracking, material dependencies, issue register |
@@ -62,6 +63,16 @@ Open [http://localhost:4173](http://localhost:4173). Stop the server with `Ctrl 
 ## Data handling
 
 The demo is intentionally local-first. Project data, plans, vendor records, action completion, safety checks, and issue status are stored in browser `localStorage`. The **Backup data** and **Restore** controls in Project planner support moving a complete workspace between browsers.
+
+## Project chatbot
+
+The right-side **Project assistant** is a context-aware chatbot. It keeps a separate conversation history for each project and answers using the project’s saved field updates, completed work, risks, materials, tasks, delivery records, and progress plan. Example prompts:
+
+- What is delaying this project?
+- Which materials are urgently required?
+- Who owns the high-priority tasks?
+- What work was completed this week?
+- What should we prioritize tomorrow?
 
 ## Production AI integration
 
