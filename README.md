@@ -20,6 +20,8 @@ SitePulse AI turns construction and interior-site updates into structured progre
 - Designed a local-first data model for site updates, reports, task ownership, milestone plans, safety checks, and backup/restore.
 - Implemented explainable update analysis that turns unstructured site language into project signals and next actions.
 - Added an interactive delivery workspace with task assignments, priority handling, schedule milestones, weekly manager digests, and report export.
+- Built a logistics command center for vendor deliveries, material dependencies, and resolution-tracked issue registers.
+- Added portfolio analytics with delivery pace, project signals, risk exposure, and operational KPIs.
 
 ## Run locally
 
@@ -45,6 +47,21 @@ Open [http://localhost:4173](http://localhost:4173). Stop the server with `Ctrl 
 - HTML, CSS, and vanilla JavaScript
 - Browser `localStorage` for persistence
 - Lucide icons
+
+## Product modules
+
+| Module | Capabilities |
+| --- | --- |
+| Overview | Portfolio KPI cards, active risks, recent site intelligence, project health |
+| Daily update | Plain-language updates, photos, material and blocker capture, report generation |
+| Reports | Searchable report archive, action checklist, printable/PDF-ready reports |
+| Project planner | Milestones, owned tasks, priorities, safety checklist, AI weekly digest |
+| Insights | Completion trend, risk distribution, project signals, delivery KPIs |
+| Materials & vendors | Delivery status board, supplier tracking, material dependencies, issue register |
+
+## Data handling
+
+The demo is intentionally local-first. Project data, plans, vendor records, action completion, safety checks, and issue status are stored in browser `localStorage`. The **Backup data** and **Restore** controls in Project planner support moving a complete workspace between browsers.
 
 ## Production AI integration
 

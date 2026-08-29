@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./features.css" />
     <link rel="stylesheet" href="./portfolio.css" />
+    <link rel="stylesheet" href="./command-center.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -21,6 +22,8 @@
           <button class="nav-item" data-view="reports"><i data-lucide="file-text"></i> Reports</button>
           <button class="nav-item" data-view="projects"><i data-lucide="building-2"></i> Projects</button>
           <button class="nav-item" data-view="planner"><i data-lucide="kanban-square"></i> Project planner</button>
+          <button class="nav-item" data-view="insights"><i data-lucide="chart-no-axes-combined"></i> Insights</button>
+          <button class="nav-item" data-view="logistics"><i data-lucide="truck"></i> Materials & vendors</button>
         </nav>
         <div class="side-bottom">
           <div class="helper-card"><span class="sparkle">✦</span><div><strong>AI Assistant</strong><small>Ready to analyze your update</small></div></div>
@@ -68,6 +71,8 @@
 
         <section id="projects" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DIRECTORY</p><h2>Sites and progress</h2><p class="muted">Track the health of your active project portfolio.</p></div><button class="primary-button" id="new-project"><i data-lucide="plus"></i> New project</button></div><div id="project-cards" class="project-cards"></div></section>
         <section id="planner" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DELIVERY WORKSPACE</p><h2>Plan, assign, and protect the schedule</h2><p class="muted">Turn progress intelligence into a clear plan for the site team.</p></div><div class="planner-actions"><button id="backup-workspace" class="outline-button"><i data-lucide="download"></i> Backup data</button><label class="outline-button restore-button"><i data-lucide="upload"></i> Restore<input id="restore-workspace" type="file" accept="application/json" hidden /></label><button id="new-task" class="primary-button"><i data-lucide="plus"></i> Add task</button></div></div><div class="planner-toolbar"><div class="planner-project"><i data-lucide="building-2"></i><select id="planner-project-select"></select></div><div class="live-label"><span class="pulse-dot"></span> Project plan synced with updates</div></div><div id="planner-metrics" class="planner-metrics"></div><div class="planner-grid"><section class="panel milestone-panel"><div class="panel-heading"><div><p class="kicker">DELIVERY ROADMAP</p><h3>Milestones</h3></div><span id="milestone-progress" class="count-pill">0% complete</span></div><div id="milestone-list" class="milestone-list"></div></section><section class="panel safety-panel"><div class="panel-heading"><div><p class="kicker danger">SITE READINESS</p><h3>Safety & compliance</h3></div><span class="count-pill safe">TODAY</span></div><div id="safety-list" class="safety-list"></div><button id="save-safety" class="secondary-button">Save safety check <i data-lucide="check"></i></button></section></div><section class="panel task-panel"><div class="panel-heading"><div><p class="kicker">EXECUTION BOARD</p><h3>Assigned work</h3></div><span id="task-open-count" class="count-pill">0 open</span></div><div class="task-table-wrap"><table class="task-table"><thead><tr><th>Done</th><th>Task</th><th>Owner</th><th>Due</th><th>Priority</th><th>Status</th></tr></thead><tbody id="task-list"></tbody></table></div></section><section class="weekly-digest"><div><span class="digest-mark">✦</span><div><p class="kicker">AI WEEKLY DIGEST</p><h3>Turn field updates into a manager-ready stand-up.</h3><p>Get a concise overview of wins, blockers, and next-week focus areas for the selected site.</p></div></div><button id="generate-digest" class="primary-button">Generate digest <i data-lucide="sparkles"></i></button><div id="digest-output" class="digest-output" hidden></div></section></section>
+        <section id="insights" class="view"><div class="view-intro"><div><p class="kicker">PORTFOLIO ANALYTICS</p><h2>See what is moving — and what may slip</h2><p class="muted">Operational metrics derived from your stored field updates and delivery plans.</p></div><div class="planner-project"><i data-lucide="building-2"></i><select id="insights-project-select"></select></div></div><div id="insight-metrics" class="insight-metrics"></div><div class="insight-grid"><section class="panel"><div class="panel-heading"><div><p class="kicker">WEEKLY DELIVERY PACE</p><h3>Completion trend</h3></div><span class="chart-key"><i></i> tasks completed</span></div><div id="completion-chart" class="completion-chart"></div></section><section class="panel"><div class="panel-heading"><div><p class="kicker danger">RISK EXPOSURE</p><h3>Risk distribution</h3></div></div><div id="risk-breakdown" class="risk-breakdown"></div></section></div><section class="panel insight-table"><div class="panel-heading"><div><p class="kicker">PROJECT SIGNALS</p><h3>Field intelligence summary</h3></div><span class="count-pill">LIVE DATA</span></div><div id="project-signals" class="project-signals"></div></section></section>
+        <section id="logistics" class="view"><div class="view-intro"><div><p class="kicker">SUPPLY CHAIN CONTROL</p><h2>Materials, vendors, and issue register</h2><p class="muted">Keep critical deliveries and site blockers visible before they impact the schedule.</p></div><button id="new-vendor" class="primary-button"><i data-lucide="plus"></i> Add vendor delivery</button></div><div id="logistics-metrics" class="insight-metrics"></div><div class="logistics-grid"><section class="panel"><div class="panel-heading"><div><p class="kicker">VENDOR DELIVERY BOARD</p><h3>Incoming materials</h3></div><span class="count-pill">TRACKING</span></div><div id="vendor-list" class="vendor-list"></div></section><section class="panel"><div class="panel-heading"><div><p class="kicker danger">ISSUE REGISTER</p><h3>Open site blockers</h3></div><span id="issue-count" class="count-pill">0 open</span></div><div id="issue-list" class="issue-list"></div></section></div></section>
       </main>
       <aside class="ai-rail">
         <div class="rail-header"><div><p class="kicker">ASK SITEPULSE</p><h3>Project assistant</h3></div><button id="collapse-chat" class="small-icon"><i data-lucide="chevron-right"></i></button></div>
@@ -82,5 +87,6 @@
     <script src="./app.js"></script>
     <script src="./features.js"></script>
     <script src="./portfolio.js"></script>
+    <script src="./command-center.js"></script>
   </body>
 </html>
