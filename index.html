@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SitePulse · Project Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">S</span><span>site<span>pulse</span></span></a>
+        <nav class="nav">
+          <button class="nav-item active" data-view="dashboard"><i data-lucide="layout-dashboard"></i> Overview</button>
+          <button class="nav-item" data-view="updates"><i data-lucide="clipboard-pen-line"></i> Daily update <span class="nav-badge">+</span></button>
+          <button class="nav-item" data-view="reports"><i data-lucide="file-text"></i> Reports</button>
+          <button class="nav-item" data-view="projects"><i data-lucide="building-2"></i> Projects</button>
+        </nav>
+        <div class="side-bottom">
+          <div class="helper-card"><span class="sparkle">✦</span><div><strong>AI Assistant</strong><small>Ready to analyze your update</small></div></div>
+          <button class="profile"><span class="avatar">AP</span><span><strong>Anushka Paul</strong><small>Project Manager</small></span><i data-lucide="more-horizontal"></i></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" aria-label="Open menu"><i data-lucide="menu"></i></button>
+          <div class="breadcrumb"><span id="page-eyebrow">Operations workspace</span><h1 id="page-title">Good morning, Anushka</h1></div>
+          <div class="top-actions"><button class="icon-button"><i data-lucide="bell"></i><span></span></button><button class="date-chip"><i data-lucide="calendar-days"></i> 29 Aug 2026</button></div>
+        </header>
+
+        <section id="dashboard" class="view active">
+          <div class="overview-intro"><div><p class="kicker">PROJECT CONTROL CENTER</p><h2>Here’s what needs your attention.</h2><p class="muted">A live snapshot of every active site, powered by today’s field updates.</p></div><button class="primary-button" data-go-update><i data-lucide="plus"></i> Add daily update</button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-icon blue"><i data-lucide="building-2"></i></div><p>Total projects</p><strong id="stat-projects">03</strong><span class="stat-foot positive"><i data-lucide="arrow-up-right"></i> 1 added this month</span></article>
+            <article class="stat-card"><div class="stat-icon violet"><i data-lucide="clipboard-check"></i></div><p>Today’s updates</p><strong id="stat-updates">04</strong><span class="stat-foot">Across all active sites</span></article>
+            <article class="stat-card"><div class="stat-icon green"><i data-lucide="circle-check-big"></i></div><p>Completed tasks</p><strong id="stat-completed">18</strong><span class="stat-foot positive"><i data-lucide="trending-up"></i> 12% from yesterday</span></article>
+            <article class="stat-card"><div class="stat-icon orange"><i data-lucide="triangle-alert"></i></div><p>Open material issues</p><strong id="stat-materials">03</strong><span class="stat-foot warning">2 need action today</span></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel activity-panel"><div class="panel-heading"><div><p class="kicker">LATEST FIELD INTELLIGENCE</p><h3>Recent project updates</h3></div><button class="text-button" data-view-link="reports">View all <i data-lucide="arrow-up-right"></i></button></div><div id="recent-updates" class="update-list"></div></section>
+            <section class="panel risks-panel"><div class="panel-heading"><div><p class="kicker danger">NEEDS ATTENTION</p><h3>Priority risks</h3></div><span class="count-pill" id="risk-count">02 open</span></div><div id="risk-list" class="risk-list"></div><button class="secondary-button" data-go-update>Resolve in a daily update <i data-lucide="arrow-right"></i></button></section>
+          </div>
+          <section class="panel progress-panel"><div class="panel-heading"><div><p class="kicker">PORTFOLIO OVERVIEW</p><h3>Active project health</h3></div><button class="text-button" data-view-link="projects">Manage projects <i data-lucide="arrow-up-right"></i></button></div><div id="project-health" class="project-health"></div></section>
+        </section>
+
+        <section id="updates" class="view">
+          <div class="view-intro"><div><p class="kicker">FIELD TO INTELLIGENCE</p><h2>Add today’s site update</h2><p class="muted">Write it as you received it. SitePulse will turn it into a clear action plan.</p></div><div class="ai-status"><span class="pulse-dot"></span> AI analysis on</div></div>
+          <div class="update-layout">
+            <form id="update-form" class="panel update-form" autocomplete="off">
+              <div class="form-section"><div class="section-label"><span>01</span><div><h3>Where is this from?</h3><p>Link this update to the correct site.</p></div></div><label>Project / site name<select id="project-select" required></select></label></div>
+              <div class="form-section"><div class="section-label"><span>02</span><div><h3>What happened today?</h3><p>Use plain language — details like area, count, and vendor are especially useful.</p></div></div><label>Daily work update<textarea id="work-update" rows="7" placeholder="e.g. False ceiling completed in Zone A. Flooring has started in Zone C but 20 LED panels are still pending from the electrical vendor. …" required></textarea></label><div class="prompt-chips"><button type="button" class="prompt-chip" data-prompt="Completed false ceiling in Zone A.">+ Completed work</button><button type="button" class="prompt-chip" data-prompt="Flooring is in progress in Zone C.">+ Work in progress</button><button type="button" class="prompt-chip" data-prompt="LED panels have not arrived from the vendor.">+ Material issue</button></div></div>
+              <div class="form-section"><div class="section-label"><span>03</span><div><h3>Add field evidence <em>optional</em></h3><p>Photos help document the daily record.</p></div></div><label class="dropzone" for="photo-input"><input id="photo-input" type="file" accept="image/*" multiple hidden /><i data-lucide="image-up"></i><strong>Drop photos here, or <span>browse files</span></strong><small>PNG, JPG or HEIC · up to 10 files</small></label><div id="photo-preview" class="photo-preview"></div></div>
+              <div class="form-section compact-fields"><label>Material update <textarea id="material-update" rows="3" placeholder="e.g. 20 LED panels pending from Lumos Electrical"></textarea></label><label>Issue or blocker <textarea id="issue-update" rows="3" placeholder="e.g. Vendor confirmed delivery may slip by one day"></textarea></label></div>
+              <div class="form-actions"><p><i data-lucide="sparkles"></i> AI will create a report and identify risks.</p><button class="primary-button" type="submit"><i data-lucide="sparkles"></i> Analyze & create report</button></div>
+            </form>
+            <aside class="analysis-aside"><div class="aside-head"><span class="sparkle">✦</span><div><strong>How analysis works</strong><small>Your update is scanned for site signals.</small></div></div><ol><li><span>1</span><div><strong>Extract activity</strong><p>Finds completed, in-progress and pending work.</p></div></li><li><span>2</span><div><strong>Flag dependencies</strong><p>Connects missing materials to schedule risks.</p></div></li><li><span>3</span><div><strong>Suggest next steps</strong><p>Creates concise, owner-ready actions.</p></div></li></ol><div class="aside-tip"><i data-lucide="lightbulb"></i><p><strong>Pro tip</strong> Include exact locations, quantities, and delivery dates for sharper insights.</p></div></aside>
+          </div>
+        </section>
+
+        <section id="reports" class="view"><div class="view-intro report-top"><div><p class="kicker">GENERATED REPORTS</p><h2>Daily progress reports</h2><p class="muted">A searchable source of truth from every field update.</p></div><select id="report-project-filter" class="filter-select"></select></div><div class="reports-layout"><div id="report-list" class="report-list"></div><article id="report-detail" class="report-detail panel"></article></div></section>
+
+        <section id="projects" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DIRECTORY</p><h2>Sites and progress</h2><p class="muted">Track the health of your active project portfolio.</p></div><button class="primary-button" id="new-project"><i data-lucide="plus"></i> New project</button></div><div id="project-cards" class="project-cards"></div></section>
+      </main>
+      <aside class="ai-rail">
+        <div class="rail-header"><div><p class="kicker">ASK SITEPULSE</p><h3>Project assistant</h3></div><button id="collapse-chat" class="small-icon"><i data-lucide="chevron-right"></i></button></div>
+        <div class="chat-context"><i data-lucide="building-2"></i><select id="chat-project-select"></select></div>
+        <div id="chat-messages" class="chat-messages"><div class="message assistant"><span class="chat-avatar">✦</span><p>I’ve reviewed the latest updates for this project. What would you like to know?</p></div></div>
+        <div class="question-suggestions"><button>What is delaying this project?</button><button>Which materials are urgent?</button><button>What should we prioritize tomorrow?</button></div>
+        <form id="chat-form" class="chat-input"><input id="chat-input" placeholder="Ask about the site…" /><button aria-label="Send message"><i data-lucide="arrow-up"></i></button></form>
+      </aside>
+    </div>
+    <div id="toast" class="toast"><i data-lucide="circle-check"></i><span></span></div>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
