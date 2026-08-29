@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./features.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -61,7 +62,7 @@
           </div>
         </section>
 
-        <section id="reports" class="view"><div class="view-intro report-top"><div><p class="kicker">GENERATED REPORTS</p><h2>Daily progress reports</h2><p class="muted">A searchable source of truth from every field update.</p></div><select id="report-project-filter" class="filter-select"></select></div><div class="reports-layout"><div id="report-list" class="report-list"></div><article id="report-detail" class="report-detail panel"></article></div></section>
+        <section id="reports" class="view"><div class="view-intro report-top"><div><p class="kicker">GENERATED REPORTS</p><h2>Daily progress reports</h2><p class="muted">A searchable source of truth from every field update.</p></div><select id="report-project-filter" class="filter-select"></select></div><div class="report-tools"><div class="report-search"><i data-lucide="search"></i><input id="report-search" placeholder="Search projects, work, or materials…" /></div><span id="report-result-count" class="search-count"></span></div><div class="reports-layout"><div id="report-list" class="report-list"></div><article id="report-detail" class="report-detail panel"></article></div></section>
 
         <section id="projects" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DIRECTORY</p><h2>Sites and progress</h2><p class="muted">Track the health of your active project portfolio.</p></div><button class="primary-button" id="new-project"><i data-lucide="plus"></i> New project</button></div><div id="project-cards" class="project-cards"></div></section>
       </main>
@@ -76,5 +77,6 @@
     <div id="toast" class="toast"><i data-lucide="circle-check"></i><span></span></div>
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script src="./app.js"></script>
+    <script src="./features.js"></script>
   </body>
 </html>
