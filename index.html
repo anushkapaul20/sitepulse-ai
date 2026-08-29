@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./features.css" />
+    <link rel="stylesheet" href="./portfolio.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -19,6 +20,7 @@
           <button class="nav-item" data-view="updates"><i data-lucide="clipboard-pen-line"></i> Daily update <span class="nav-badge">+</span></button>
           <button class="nav-item" data-view="reports"><i data-lucide="file-text"></i> Reports</button>
           <button class="nav-item" data-view="projects"><i data-lucide="building-2"></i> Projects</button>
+          <button class="nav-item" data-view="planner"><i data-lucide="kanban-square"></i> Project planner</button>
         </nav>
         <div class="side-bottom">
           <div class="helper-card"><span class="sparkle">✦</span><div><strong>AI Assistant</strong><small>Ready to analyze your update</small></div></div>
@@ -65,6 +67,7 @@
         <section id="reports" class="view"><div class="view-intro report-top"><div><p class="kicker">GENERATED REPORTS</p><h2>Daily progress reports</h2><p class="muted">A searchable source of truth from every field update.</p></div><select id="report-project-filter" class="filter-select"></select></div><div class="report-tools"><div class="report-search"><i data-lucide="search"></i><input id="report-search" placeholder="Search projects, work, or materials…" /></div><span id="report-result-count" class="search-count"></span></div><div class="reports-layout"><div id="report-list" class="report-list"></div><article id="report-detail" class="report-detail panel"></article></div></section>
 
         <section id="projects" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DIRECTORY</p><h2>Sites and progress</h2><p class="muted">Track the health of your active project portfolio.</p></div><button class="primary-button" id="new-project"><i data-lucide="plus"></i> New project</button></div><div id="project-cards" class="project-cards"></div></section>
+        <section id="planner" class="view"><div class="view-intro"><div><p class="kicker">PROJECT DELIVERY WORKSPACE</p><h2>Plan, assign, and protect the schedule</h2><p class="muted">Turn progress intelligence into a clear plan for the site team.</p></div><div class="planner-actions"><button id="backup-workspace" class="outline-button"><i data-lucide="download"></i> Backup data</button><label class="outline-button restore-button"><i data-lucide="upload"></i> Restore<input id="restore-workspace" type="file" accept="application/json" hidden /></label><button id="new-task" class="primary-button"><i data-lucide="plus"></i> Add task</button></div></div><div class="planner-toolbar"><div class="planner-project"><i data-lucide="building-2"></i><select id="planner-project-select"></select></div><div class="live-label"><span class="pulse-dot"></span> Project plan synced with updates</div></div><div id="planner-metrics" class="planner-metrics"></div><div class="planner-grid"><section class="panel milestone-panel"><div class="panel-heading"><div><p class="kicker">DELIVERY ROADMAP</p><h3>Milestones</h3></div><span id="milestone-progress" class="count-pill">0% complete</span></div><div id="milestone-list" class="milestone-list"></div></section><section class="panel safety-panel"><div class="panel-heading"><div><p class="kicker danger">SITE READINESS</p><h3>Safety & compliance</h3></div><span class="count-pill safe">TODAY</span></div><div id="safety-list" class="safety-list"></div><button id="save-safety" class="secondary-button">Save safety check <i data-lucide="check"></i></button></section></div><section class="panel task-panel"><div class="panel-heading"><div><p class="kicker">EXECUTION BOARD</p><h3>Assigned work</h3></div><span id="task-open-count" class="count-pill">0 open</span></div><div class="task-table-wrap"><table class="task-table"><thead><tr><th>Done</th><th>Task</th><th>Owner</th><th>Due</th><th>Priority</th><th>Status</th></tr></thead><tbody id="task-list"></tbody></table></div></section><section class="weekly-digest"><div><span class="digest-mark">✦</span><div><p class="kicker">AI WEEKLY DIGEST</p><h3>Turn field updates into a manager-ready stand-up.</h3><p>Get a concise overview of wins, blockers, and next-week focus areas for the selected site.</p></div></div><button id="generate-digest" class="primary-button">Generate digest <i data-lucide="sparkles"></i></button><div id="digest-output" class="digest-output" hidden></div></section></section>
       </main>
       <aside class="ai-rail">
         <div class="rail-header"><div><p class="kicker">ASK SITEPULSE</p><h3>Project assistant</h3></div><button id="collapse-chat" class="small-icon"><i data-lucide="chevron-right"></i></button></div>
@@ -78,5 +81,6 @@
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script src="./app.js"></script>
     <script src="./features.js"></script>
+    <script src="./portfolio.js"></script>
   </body>
 </html>

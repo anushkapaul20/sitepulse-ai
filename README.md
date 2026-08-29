@@ -14,6 +14,13 @@ SitePulse AI turns construction and interior-site updates into structured progre
 - Ask project-specific questions using saved updates, not generic answers.
 - Keep demo data locally in the browser with no backend or API key required.
 
+## Resume-ready highlights
+
+- Built a responsive multi-project construction operations dashboard with vanilla JavaScript.
+- Designed a local-first data model for site updates, reports, task ownership, milestone plans, safety checks, and backup/restore.
+- Implemented explainable update analysis that turns unstructured site language into project signals and next actions.
+- Added an interactive delivery workspace with task assignments, priority handling, schedule milestones, weekly manager digests, and report export.
+
 ## Run locally
 
 From this folder:
